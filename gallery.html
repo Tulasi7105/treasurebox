@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Treasure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body><nav><h1><center>Treasure</h1>
+<h10>
+  <p class="tagline">   Moments  Worth  Keeping💕</p></h10>
+</center></nav>
+<nav class="navbar black-navbar">
+<div class="logo-container">
+    <img src="assets\logo1.jpg.png" alt="Treasure Logo" class="logo">
+</div>
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+
+<section class="gallery">
+  <h1>Our Creations</h1>
+  <p>Every moment captured with love — explore our collection of wedding invitations and gifts.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="images/invite1.jpg" alt="Wedding Invitation"></div>
+    <div class="gallery-item"><img src="images/invite2.jpg" alt="Gift Box"></div>
+    <div class="gallery-item"><img src="images/invite3.jpg" alt="Thank You Card"></div>
+    <div class="gallery-item"><img src="images/invite4.jpg" alt="Gift Hamper"></div>
+    <div class="gallery-item"><img src="images/invite5.jpg" alt="Elegant Design"></div>
+    <div class="gallery-item"><img src="images/invite6.jpg" alt="Personalized Gift"></div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+</section>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.close');
+  const images = document.querySelectorAll('.gallery-item img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+
+
+  </body>
+</html>
